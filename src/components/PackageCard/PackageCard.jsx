@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, BedDouble, Car, Coffee, Star } from 'lucide-react'
 
-function PackageCard({ title, duration, price, image, rating, hotel, transport, meals }) {
+function PackageCard({ title, duration, price, image, rating, hotel, transport, meals, badge }) {
   return (
     <motion.article
       whileHover={{ y: -8, scale: 1.01, transition: { duration: 0.25 } }}
@@ -13,6 +13,11 @@ function PackageCard({ title, duration, price, image, rating, hotel, transport, 
       <div className="relative overflow-hidden">
         <img src={image} alt={title} loading="lazy" className="h-80 w-full object-cover transition duration-500 group-hover:scale-110" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/70 via-[#111827]/20 to-transparent" />
+        {badge ? (
+          <div className="absolute left-4 top-4 rounded-full border border-white/30 bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-white backdrop-blur-md">
+            {badge}
+          </div>
+        ) : null}
 
         <div className="absolute inset-x-0 bottom-0 p-6">
           <div className="rounded-full border border-white/25 bg-white/10 px-3 py-2 text-sm font-medium text-white backdrop-blur-md">
