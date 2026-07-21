@@ -16,6 +16,8 @@ const navLinks = [
 function MainLayout() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [tripFormOpen, setTripFormOpen] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -24,9 +26,14 @@ function MainLayout() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  const handleTripSubmit = (event) => {
+    event.preventDefault()
+    setSubmitted(true)
+  }
+
   return (
     <div className="min-h-screen bg-transparent text-[#111827]">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-[#e5d7b8] bg-[#f8f5ef]/95 shadow-[0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur transition-all duration-500">
+      <header className={`fixed inset-x-0 top-0 z-50 border-b border-[#e5d7b8] bg-[#f8f5ef]/95 shadow-[0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur transition-all duration-500 ${scrolled ? 'py-2' : 'py-0'}`}>
         <Container className="flex items-center justify-between py-4">
           <NavLink to="/" className="flex items-center gap-3">
             <img src={logo} alt="Mount Travel & Tours logo" className="h-14 w-14 object-contain" />
@@ -56,6 +63,16 @@ function MainLayout() {
                 {link.label}
               </NavLink>
             ))}
+            <button
+              type="button"
+              onClick={() => {
+                setTripFormOpen(true)
+                setSubmitted(false)
+              }}
+              className="rounded-full bg-[#111827] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#d9a84e] hover:text-[#111827]"
+            >
+              Make My Trip
+            </button>
           </nav>
 
           <button
@@ -81,9 +98,85 @@ function MainLayout() {
                 {link.label}
               </NavLink>
             ))}
+            <button
+              type="button"
+              onClick={() => {
+                setMobileOpen(false)
+                setTripFormOpen(true)
+                setSubmitted(false)
+              }}
+              className="mt-3 w-full rounded-full bg-[#d9a84e] px-4 py-3 text-sm font-semibold text-[#111827]"
+            >
+              Make My Trip
+            </button>
           </div>
         ) : null}
       </header>
+
+      {tripFormOpen ? (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-[#111827]/70 px-4 py-6 backdrop-blur-sm">
+          <div className="w-full max-w-2xl rounded-[2rem] border border-[#e5d7b8] bg-[#fcfaf6] p-6 shadow-[0_25px_80px_rgba(17,24,39,0.3)] sm:p-8">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#d9a84e]">Plan your escape</p>
+                <h2 className="mt-2 text-2xl font-semibold text-[#111827]">Make My Trip</h2>
+                <p className="mt-2 text-sm text-[#6b7280]">Share your dream itinerary and we’ll craft a tailored mountain experience for you.</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setTripFormOpen(false)}
+                className="rounded-full border border-[#e5d7b8] p-2 text-[#111827] transition hover:bg-[#111827] hover:text-white"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            {submitted ? (
+              <div className="mt-6 rounded-[1.25rem] border border-[#d9a84e]/30 bg-[#fff8e8] p-5 text-sm text-[#6b7280]">
+                <p className="font-semibold text-[#111827]">Thank you for your request.</p>
+                <p className="mt-2">Our travel team will reach out to you shortly with a personalized itinerary.</p>
+              </div>
+            ) : (
+              <form className="mt-6 grid gap-4 md:grid-cols-2" onSubmit={handleTripSubmit}>
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-[#374151]">Full name</label>
+                  <input required className="w-full rounded-2xl border border-[#e5d7b8] bg-white px-4 py-3 text-sm outline-none focus:border-[#d9a84e]" placeholder="Enter your name" />
+                </div>
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-[#374151]">Email address</label>
+                  <input type="email" required className="w-full rounded-2xl border border-[#e5d7b8] bg-white px-4 py-3 text-sm outline-none focus:border-[#d9a84e]" placeholder="your@email.com" />
+                </div>
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-[#374151]">Phone number</label>
+                  <input required className="w-full rounded-2xl border border-[#e5d7b8] bg-white px-4 py-3 text-sm outline-none focus:border-[#d9a84e]" placeholder="03XX-XXXXXXX" />
+                </div>
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-[#374151]">Destination</label>
+                  <input required className="w-full rounded-2xl border border-[#e5d7b8] bg-white px-4 py-3 text-sm outline-none focus:border-[#d9a84e]" placeholder="Skardu, Hunza, etc." />
+                </div>
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-[#374151]">Travelers</label>
+                  <input required className="w-full rounded-2xl border border-[#e5d7b8] bg-white px-4 py-3 text-sm outline-none focus:border-[#d9a84e]" placeholder="2 adults, 1 child" />
+                </div>
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-[#374151]">Preferred dates</label>
+                  <input type="text" className="w-full rounded-2xl border border-[#e5d7b8] bg-white px-4 py-3 text-sm outline-none focus:border-[#d9a84e]" placeholder="e.g. July 2026" />
+                </div>
+                <div className="md:col-span-2">
+                  <label className="mb-2 block text-sm font-medium text-[#374151]">Trip notes</label>
+                  <textarea rows="4" className="w-full rounded-2xl border border-[#e5d7b8] bg-white px-4 py-3 text-sm outline-none focus:border-[#d9a84e]" placeholder="Tell us about your travel style, budget, or special requests" />
+                </div>
+                <div className="md:col-span-2 flex flex-wrap items-center justify-between gap-3">
+                  <p className="text-sm text-[#6b7280]">We’ll contact you within 24 hours.</p>
+                  <button type="submit" className="rounded-full bg-[#111827] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#d9a84e] hover:text-[#111827]">
+                    Submit Request
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
+        </div>
+      ) : null}
 
       <main>
         <Outlet />
