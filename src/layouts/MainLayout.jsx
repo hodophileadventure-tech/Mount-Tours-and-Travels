@@ -114,13 +114,13 @@ function MainLayout() {
       </header>
 
       {tripFormOpen ? (
-        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-[#111827]/70 px-4 py-6 backdrop-blur-sm">
-          <div className="w-full max-w-2xl rounded-[2rem] border border-[#e5d7b8] bg-[#fcfaf6] p-6 shadow-[0_25px_80px_rgba(17,24,39,0.3)] sm:p-8">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-[#111827]/70 px-3 py-4 sm:px-4 sm:py-6 backdrop-blur-sm">
+          <div className="max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-[2rem] border border-[#e5d7b8] bg-[#fcfaf6] p-5 shadow-[0_25px_80px_rgba(17,24,39,0.3)] sm:p-8 lg:p-10">
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#d9a84e]">Plan your escape</p>
-                <h2 className="mt-2 text-2xl font-semibold text-[#111827]">Make My Trip</h2>
-                <p className="mt-2 text-sm text-[#6b7280]">Share your dream itinerary and we’ll craft a tailored mountain experience for you.</p>
+                <h2 className="mt-2 text-2xl font-semibold text-[#111827] sm:text-3xl">Make My Trip</h2>
+                <p className="mt-2 max-w-2xl text-sm text-[#6b7280] sm:text-base">Share your dream itinerary and we’ll craft a tailored mountain experience for you.</p>
               </div>
               <button
                 type="button"
@@ -132,7 +132,7 @@ function MainLayout() {
             </div>
 
             {submitted ? (
-              <div className="mt-6 rounded-[1.25rem] border border-[#d9a84e]/30 bg-[#fff8e8] p-5 text-sm text-[#6b7280]">
+              <div className="mt-6 rounded-[1.25rem] border border-[#d9a84e]/30 bg-[#fff8e8] p-5 text-sm text-[#6b7280] sm:p-6">
                 <p className="font-semibold text-[#111827]">Thank you for your request.</p>
                 <p className="mt-2">Our travel team will reach out to you shortly with a personalized itinerary.</p>
               </div>
@@ -164,9 +164,9 @@ function MainLayout() {
                 </div>
                 <div className="md:col-span-2">
                   <label className="mb-2 block text-sm font-medium text-[#374151]">Trip notes</label>
-                  <textarea rows="4" className="w-full rounded-2xl border border-[#e5d7b8] bg-white px-4 py-3 text-sm outline-none focus:border-[#d9a84e]" placeholder="Tell us about your travel style, budget, or special requests" />
+                  <textarea rows="5" className="w-full rounded-2xl border border-[#e5d7b8] bg-white px-4 py-3 text-sm outline-none focus:border-[#d9a84e]" placeholder="Tell us about your travel style, budget, or special requests" />
                 </div>
-                <div className="md:col-span-2 flex flex-wrap items-center justify-between gap-3">
+                <div className="md:col-span-2 flex flex-col gap-3 pt-2 sm:flex-row sm:items-center sm:justify-between">
                   <p className="text-sm text-[#6b7280]">We’ll contact you within 24 hours.</p>
                   <button type="submit" className="rounded-full bg-[#111827] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#d9a84e] hover:text-[#111827]">
                     Submit Request
