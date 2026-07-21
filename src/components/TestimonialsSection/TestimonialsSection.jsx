@@ -7,23 +7,23 @@ import SectionTitle from '../SectionTitle/SectionTitle'
 const testimonials = [
   {
     name: 'Ayesha Khan',
-    country: 'Dubai, UAE',
+    country: 'Islamabad, Pakistan',
     quote:
       'Every detail felt effortless. From private transfers to the mountain villa, the experience was as refined as it was unforgettable.',
     image:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80',
+      'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=600&q=80',
   },
   {
-    name: 'Daniel Mercer',
-    country: 'London, UK',
+    name: 'Hassan Malik',
+    country: 'Lahore, Pakistan',
     quote:
       'The journey felt cinematic and deeply personal. We were guided with elegance, warmth, and extraordinary local insight.',
     image:
-      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80',
+      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80',
   },
   {
     name: 'Sara Ali',
-    country: 'Toronto, Canada',
+    country: 'Karachi, Pakistan',
     quote:
       'A seamless luxury escape with breathtaking views and a level of service we’ll remember for years to come.',
     image:
