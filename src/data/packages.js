@@ -8,7 +8,7 @@ const packages = [
     hotel: 'Premium Mountain Lodge',
     transport: 'Domestic Flight',
     meals: 'Breakfast & Dinner',
-    image: 'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1400&q=80',
+    image: '/images/hunza.avif',
     badge: 'Hot Selling',
   },
   {
@@ -20,7 +20,7 @@ const packages = [
     hotel: 'Luxury Resort',
     transport: 'Air + SUV',
     meals: 'Full Board',
-    image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=80',
+    image: '/images/fairy-meadows.jpg',
     badge: 'Adventure',
   },
   {
@@ -32,7 +32,7 @@ const packages = [
     hotel: 'Boutique Stay',
     transport: 'Flight + Transfer',
     meals: 'All Meals',
-    image: 'https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1400&q=80',
+    image: '/images/naltar.jpg',
     badge: 'Family Favorite',
   },
   {
@@ -44,7 +44,7 @@ const packages = [
     hotel: 'Comfort Road Stay',
     transport: 'Private Jeep',
     meals: 'Breakfast & Lunch',
-    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=80',
+    image: '/images/skardu.jpg',
     badge: 'Road Adventure',
   },
   {
@@ -56,7 +56,7 @@ const packages = [
     hotel: 'Heritage Lodge',
     transport: 'Luxury Coach',
     meals: 'Full Board',
-    image: 'https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1400&q=80',
+    image: '/images/hunza.avif',
     badge: 'Best Seller',
   },
   {
@@ -68,7 +68,7 @@ const packages = [
     hotel: 'Scenic Retreat',
     transport: 'SUV + Local Transfers',
     meals: 'Breakfast & Dinner',
-    image: 'https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=1400&q=80',
+    image: '/images/fairy-meadows.jpg',
     badge: 'Weekend Escape',
   },
 ]
