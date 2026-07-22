@@ -21,7 +21,7 @@ const packages = [
     hotel: 'Hotel Accommodation',
     transport: 'Domestic Flight',
     meals: 'Breakfast & Dinner',
-    image: '/images/skardu.jpg',
+    image: '/images/fairy-meadows.jpg',
     badge: 'Silver Package',
   },
   {
@@ -33,7 +33,7 @@ const packages = [
     hotel: 'Deluxe Hotel Accommodation',
     transport: 'Domestic Flight',
     meals: 'Breakfast & Dinner',
-    image: '/images/skardu.jpg',
+    image: '/images/kaghan.jpg',
     badge: 'Gold Plus Package',
   },
   {
@@ -45,7 +45,7 @@ const packages = [
     hotel: 'Deluxe Hotel Accommodation',
     transport: 'Domestic Flight',
     meals: 'Breakfast & Dinner',
-    image: '/images/skardu.jpg',
+    image: '/images/swat.jpg',
     badge: 'Gold Package',
   },
   {
@@ -57,7 +57,7 @@ const packages = [
     hotel: 'Hotel Accommodation',
     transport: 'Flight + Ground',
     meals: 'Breakfast & Dinner',
-    image: '/images/skardu.jpg',
+    image: '/images/kashmir.jpg',
     badge: 'Silver Package',
   },
   {
@@ -69,7 +69,7 @@ const packages = [
     hotel: 'Deluxe Hotel Accommodation',
     transport: 'Domestic Flight',
     meals: 'Breakfast & Dinner',
-    image: '/images/hunza.avif',
+    image: '/images/gilgit.jpg',
     badge: 'Gold Package',
   },
   {
@@ -93,7 +93,7 @@ const packages = [
     hotel: 'Deluxe Plus Hotel Accommodation',
     transport: 'Domestic Flight',
     meals: 'Breakfast & Dinner',
-    image: '/images/hunza.avif',
+    image: '/images/naltar.jpg',
     badge: 'Gold Plus Package',
   },
 ]

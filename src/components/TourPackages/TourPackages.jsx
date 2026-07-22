@@ -5,7 +5,6 @@ import packages from '../../data/packages'
 
 function TourPackages() {
   const airPackages = packages.filter((pkg) => pkg.category === 'By Air')
-  const roadPackages = packages.filter((pkg) => pkg.category === 'By Road')
 
   return (
     <section className="bg-[#fcfaf6] py-24">
@@ -28,19 +27,6 @@ function TourPackages() {
             </div>
             <div className="grid gap-8 lg:grid-cols-3">
               {airPackages.map((pkg) => (
-                <PackageCard key={pkg.title} {...pkg} />
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <div className="mb-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#d9a84e]">Category 02</p>
-              <h2 className="mt-2 text-3xl font-semibold text-[#111827]">By Road</h2>
-              <p className="mt-3 max-w-2xl text-lg text-[#6b7280]">Classic overland adventures with flexible pacing, mountain views, and memorable roadside stops.</p>
-            </div>
-            <div className="grid gap-8 lg:grid-cols-3">
-              {roadPackages.map((pkg) => (
                 <PackageCard key={pkg.title} {...pkg} />
               ))}
             </div>
