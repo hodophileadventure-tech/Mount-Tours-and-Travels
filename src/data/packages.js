@@ -96,31 +96,6 @@ const packages = [
     image: '/images/hunza.avif',
     badge: 'Gold Plus Package',
   },
-  // By Road Package
-  {
-    category: 'By Road',
-    title: '5 Days Skardu Valley By Road Tour',
-    duration: '5 Days / 4 Nights',
-    price: 'From PKR 175,000',
-    rating: '4.7',
-    hotel: 'Standard Hotel Accommodation',
-    transport: 'GLi Car with Driver',
-    meals: 'Breakfast',
-    image: '/images/skardu.jpg',
-    badge: 'Explorer Package',
-  },
-  {
-    category: 'By Road',
-    title: '8 Days Skardu & Hunza Valley By Road Tour',
-    duration: '8 Days / 7 Nights',
-    price: 'From PKR 265,000',
-    rating: '4.8',
-    hotel: 'Hotel Accommodation',
-    transport: 'BRV/APV with Driver',
-    meals: 'Breakfast & Dinner',
-    image: '/images/hunza.avif',
-    badge: 'Gold Package',
-  },
 ]
 
 export default packages
