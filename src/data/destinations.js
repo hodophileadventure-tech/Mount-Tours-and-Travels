@@ -63,7 +63,7 @@ const destinations = [
     title: 'Kashmir',
     description: 'Savor houseboat stays, mountain air, and luxurious valley retreats in the heart of Kashmir.',
     accent: 'Celestial calm',
-    image: 'https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/kashmir.jpg',
   },
   {
     title: 'Muree',
