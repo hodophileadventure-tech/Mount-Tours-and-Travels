@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, ChevronDown, Compass, Sparkles } from 'lucide-react'
 import { useEffect, useState } from 'react'
-import logo from '../../assets/logo.png'
 import Button from '../Button/Button'
 import Container from '../Container/Container'
 
@@ -48,13 +47,6 @@ function Hero() {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="max-w-3xl"
           >
-            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm">
-              <img src={logo} alt="Mount Travel & Tours logo" className="h-10 w-10 object-contain" />
-              <span className="text-sm uppercase tracking-[0.35em] text-[#f9ebc7]">
-                Mount Travel & Tours
-              </span>
-            </div>
-
             <h1 className="text-4xl font-semibold leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-7xl">
               Where alpine grandeur meets effortless luxury.
             </h1>
