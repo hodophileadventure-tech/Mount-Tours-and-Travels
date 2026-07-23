@@ -33,15 +33,15 @@ function MainLayout() {
 
   return (
     <div className="min-h-screen bg-transparent text-[#111827]">
-      <header className={`fixed inset-x-0 top-0 z-50 border-b border-[#d9a84e]/40 bg-[linear-gradient(135deg,#111827_0%,#1f2937_48%,#5a3a1c_100%)] shadow-[0_12px_40px_rgba(17,24,39,0.35)] backdrop-blur-xl transition-all duration-500 ${scrolled ? 'py-2' : 'py-0'}`}>
+      <header className={`fixed inset-x-0 top-0 z-50 border-b border-[#b47a2c]/40 bg-[linear-gradient(135deg,#f9efcf_0%,#e4bc6c_52%,#9c672f_100%)] shadow-[0_12px_40px_rgba(87,51,13,0.28)] backdrop-blur-xl transition-all duration-500 ${scrolled ? 'py-2' : 'py-0'}`}>
         <Container className="flex items-center justify-between py-4">
           <NavLink to="/" className="flex items-center gap-3">
             <img src={logo} alt="Mount Travel & Tours logo" className="h-16 w-16 object-contain" />
             <div>
-              <p className="text-lg font-semibold tracking-wide text-white">
+              <p className="text-lg font-semibold tracking-wide text-[#111827]">
                 Mount Travel & Tours
               </p>
-              <p className="text-xs uppercase tracking-[0.3em] text-[#f7d98d]">
+              <p className="text-xs uppercase tracking-[0.3em] text-[#5b3b18]">
                 Luxury escapes
               </p>
             </div>
@@ -55,8 +55,8 @@ function MainLayout() {
                 className={({ isActive }) =>
                   `text-sm font-medium transition ${
                     isActive
-                      ? 'text-[#f7d98d]'
-                      : 'text-white/85 hover:text-[#f7d98d]'
+                      ? 'text-[#111827]'
+                      : 'text-[#3b2b18] hover:text-[#111827]'
                   }`
                 }
               >
@@ -69,7 +69,7 @@ function MainLayout() {
                 setTripFormOpen(true)
                 setSubmitted(false)
               }}
-              className="rounded-full bg-[#f7d98d] px-4 py-2.5 text-sm font-semibold text-[#111827] transition hover:bg-white hover:text-[#111827]"
+              className="rounded-full bg-[#111827] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#fffaf0] hover:text-[#111827]"
             >
               Make My Trip
             </button>
@@ -78,21 +78,21 @@ function MainLayout() {
           <button
             type="button"
             onClick={() => setMobileOpen((open) => !open)}
-            className="rounded-full border border-[#f7d98d]/70 p-2 text-white md:hidden"
+            className="rounded-full border border-[#5b3b18]/40 bg-[#111827]/10 p-2 text-[#111827] md:hidden"
           >
             {mobileOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </Container>
 
         {mobileOpen ? (
-          <div className="border-t border-[#d9a84e]/30 bg-[linear-gradient(180deg,rgba(17,24,39,0.98),rgba(35,25,16,0.98))] px-4 py-4 backdrop-blur md:hidden">
+          <div className="border-t border-[#8a5626]/30 bg-[linear-gradient(180deg,#f7e4b6_0%,#e4bc6c_52%,#9c672f_100%)] px-4 py-4 backdrop-blur md:hidden">
             {navLinks.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
                 onClick={() => setMobileOpen(false)}
                 className={({ isActive }) =>
-                  `block rounded-2xl px-4 py-3 text-sm font-medium ${isActive ? 'bg-[#f7d98d]/15 text-[#f7d98d]' : 'text-white/80 hover:bg-white/10'}`
+                  `block rounded-2xl px-4 py-3 text-sm font-medium ${isActive ? 'bg-[#111827]/10 text-[#111827]' : 'text-[#3b2b18] hover:bg-[#111827]/5'}`
                 }
               >
                 {link.label}
@@ -105,7 +105,7 @@ function MainLayout() {
                 setTripFormOpen(true)
                 setSubmitted(false)
               }}
-              className="mt-3 w-full rounded-full bg-[#f7d98d] px-4 py-3 text-sm font-semibold text-[#111827]"
+              className="mt-3 w-full rounded-full bg-[#111827] px-4 py-3 text-sm font-semibold text-white"
             >
               Make My Trip
             </button>
