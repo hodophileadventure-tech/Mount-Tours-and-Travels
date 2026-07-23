@@ -9,7 +9,7 @@ const packages = [
     hotel: 'Deluxe Hotel Accommodation',
     transport: 'Domestic Flight',
     meals: 'Breakfast',
-    image: '/images/skardu.jpg',
+      image: '/images/fairy-meadows-custom.jpeg',
     badge: 'Gold plus Package',
   },
   {
@@ -21,7 +21,7 @@ const packages = [
     hotel: 'Hotel Accommodation',
     transport: 'Domestic Flight',
     meals: 'Breakfast & Dinner',
-    image: '/images/fairy-meadows.jpg',
+      image: '/images/kaghan-custom.jpeg',
     badge: 'Silver Package',
   },
   {
@@ -33,7 +33,7 @@ const packages = [
     hotel: 'Deluxe Hotel Accommodation',
     transport: 'Domestic Flight',
     meals: 'Breakfast & Dinner',
-    image: '/images/kaghan.jpg',
+      image: '/images/swat-custom.jpeg',
     badge: 'Gold Plus Package',
   },
   {
@@ -45,7 +45,7 @@ const packages = [
     hotel: 'Deluxe Hotel Accommodation',
     transport: 'Domestic Flight',
     meals: 'Breakfast & Dinner',
-    image: '/images/swat.jpg',
+      image: '/images/kashmir-custom.jpeg',
     badge: 'Gold Package',
   },
   {
@@ -57,7 +57,7 @@ const packages = [
     hotel: 'Hotel Accommodation',
     transport: 'Flight + Ground',
     meals: 'Breakfast & Dinner',
-    image: '/images/kashmir.jpg',
+      image: '/images/naltar-custom.jpeg',
     badge: 'Silver Package',
   },
   {
@@ -69,7 +69,7 @@ const packages = [
     hotel: 'Deluxe Hotel Accommodation',
     transport: 'Domestic Flight',
     meals: 'Breakfast & Dinner',
-    image: '/images/gilgit.jpg',
+    image: '/images/hunza-shaukat.jpeg',
     badge: 'Gold Package',
   },
   {
@@ -81,7 +81,7 @@ const packages = [
     hotel: 'Deluxe Hotel Accommodation',
     transport: 'Domestic Flight',
     meals: 'Breakfast & Dinner',
-    image: '/images/hunza.avif',
+    image: '/images/hunza-shaukat.jpeg',
     badge: 'Gold Package',
   },
   {
@@ -93,7 +93,7 @@ const packages = [
     hotel: 'Deluxe Plus Hotel Accommodation',
     transport: 'Domestic Flight',
     meals: 'Breakfast & Dinner',
-    image: '/images/naltar.jpg',
+    image: '/images/hunza-shaukat.jpeg',
     badge: 'Gold Plus Package',
   },
 ]

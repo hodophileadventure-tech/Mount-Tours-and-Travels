@@ -49,7 +49,7 @@ function Hero() {
             className="max-w-3xl"
           >
             <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm">
-              <img src={logo} alt="Mount Travel & Tours logo" className="h-8 w-8 object-contain" />
+              <img src={logo} alt="Mount Travel & Tours logo" className="h-10 w-10 object-contain" />
               <span className="text-sm uppercase tracking-[0.35em] text-[#f9ebc7]">
                 Mount Travel & Tours
               </span>

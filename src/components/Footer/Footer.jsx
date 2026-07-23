@@ -44,7 +44,7 @@ function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr]">
           <div>
             <div className="flex items-center gap-3">
-              <img src={logo} alt="Mount Travel & Tours logo" className="h-10 w-10 object-contain" />
+              <img src={logo} alt="Mount Travel & Tours logo" className="h-12 w-12 object-contain" />
               <div>
                 <p className="text-lg font-semibold tracking-wide">Mount Travel & Tours</p>
                 <p className="text-xs uppercase tracking-[0.3em] text-[#d9a84e]">Luxury journeys</p>

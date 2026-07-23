@@ -1,111 +1,110 @@
-import { motion, AnimatePresence } from 'framer-motion'
-import { useEffect, useState } from 'react'
-import { Star } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { ExternalLink, Star } from 'lucide-react'
 import Container from '../Container/Container'
 import SectionTitle from '../SectionTitle/SectionTitle'
 
-const testimonials = [
+const googleReviewsUrl =
+  'https://www.google.com/maps/place/Mount+Travel+and+Tours/@35.2853654,75.6389534,17z/data=!4m8!3m7!1s0x38e463e8276752f9:0xbef43b84ddb4ffdf!8m2!3d35.2853654!4d75.6389534!9m1!1b1!16s%2Fg%2F11w9t8bxvs!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDcyMC4wIKXMDSoASAFQAw%3D%3D'
+
+const googleReviews = [
   {
-    name: 'Ayesha Khan',
-    country: 'Islamabad, Pakistan',
+    name: 'Huzaifa Mandviwala',
+    date: '2 months ago',
     quote:
-      'Every detail felt effortless. From private transfers to the mountain villa, the experience was as refined as it was unforgettable.',
-    image:
-      'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=600&q=80',
+      'Our Skardu trip was made truly memorable by our guide, Emran Nadeem. He handled everything from stays to sightseeing with great care and professionalism, making the whole journey smooth and stress free.',
   },
   {
-    name: 'Hassan Malik',
-    country: 'Lahore, Pakistan',
+    name: 'Masood Abbas Khan',
+    date: '3 weeks ago',
     quote:
-      'The journey felt cinematic and deeply personal. We were guided with elegance, warmth, and extraordinary local insight.',
-    image:
-      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80',
+      'Our tour was excellent and very enjoyable. Imran is highly professional, knowledgeable, and experienced in tourism. His hospitality was outstanding, and he made the entire trip comfortable and memorable.',
   },
   {
-    name: 'Sara Ali',
-    country: 'Karachi, Pakistan',
+    name: 'Hasham Shabbir',
+    date: 'a month ago',
     quote:
-      'A seamless luxury escape with breathtaking views and a level of service we’ll remember for years to come.',
-    image:
-      'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80',
+      'We booked Mount Travel and Tours for Skardu. Imran, the CEO, himself accompanied us. We enjoyed his guidance, he knows the areas very well, arrived on time every day, and is a trustworthy company to book.',
+  },
+  {
+    name: 'Sohail Ashraf',
+    date: 'a month ago',
+    quote:
+      'We recently traveled to Skardu with Mount Travel and Tours, and the entire experience was wonderful. The team made the trip comfortable, organized, and memorable from start to finish.',
+  },
+  {
+    name: 'Insiyah Abbas',
+    date: 'a week ago',
+    quote:
+      'Thank you for arranging a wonderful trip for us. The owner Emraan bhai is a local there, a gem of a person and highly competent too. Everything was well arranged, and the package was reasonable.',
+  },
+  {
+    name: 'Misha',
+    date: '10 months ago',
+    quote:
+      'We had an amazing experience with Mount Travel and Tours on our recent trip to Skardu. Imran Nadeem was super cooperative, and the itinerary felt genuinely customized.',
   },
 ]
 
+function ReviewStars() {
+  return (
+    <div className="flex gap-1 text-[#d9a84e]" aria-label="5 out of 5 stars">
+      {Array.from({ length: 5 }).map((_, index) => (
+        <Star key={index} size={16} fill="currentColor" aria-hidden="true" />
+      ))}
+    </div>
+  )
+}
+
 function TestimonialsSection() {
-  const [activeIndex, setActiveIndex] = useState(0)
-
-  useEffect(() => {
-    const interval = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % testimonials.length)
-    }, 5000)
-
-    return () => window.clearInterval(interval)
-  }, [])
-
-  const activeTestimonial = testimonials[activeIndex]
-
   return (
     <section className="bg-[#f8f5ef] py-24">
       <Container>
         <div className="mb-12 max-w-3xl">
           <SectionTitle
-            eyebrow="Testimonials"
-            title="What discerning travelers say about their experience"
-            description="Luxury is felt in the details, and our guests consistently remember the comfort, care, and confidence of every journey."
+            eyebrow="Google reviews"
+            title="Straight from travelers who explored with us"
+            description="A selection of recent guest reviews from Mount Travel and Tours on Google Maps."
             align="left"
           />
         </div>
 
-        <div className="rounded-[2rem] border border-[#e5d7b8] bg-white/80 p-8 shadow-[0_20px_70px_rgba(17,24,39,0.08)] sm:p-10 lg:p-12">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTestimonial.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.45 }}
-              className="grid items-center gap-8 lg:grid-cols-[220px_1fr]"
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {googleReviews.map((review, index) => (
+            <motion.article
+              key={review.name}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.4, delay: index * 0.06 }}
+              className="flex min-h-64 flex-col rounded-2xl border border-[#e5d7b8] bg-white p-6 shadow-[0_12px_35px_rgba(17,24,39,0.06)]"
             >
-              <div className="flex justify-center lg:justify-start">
-                <img
-                  src={activeTestimonial.image}
-                  alt={activeTestimonial.name}
-                  className="h-52 w-52 rounded-full object-cover ring-4 ring-[#f2e7d0]"
-                />
-              </div>
-
-              <div>
-                <div className="flex gap-1 text-[#d9a84e]">
-                  {Array.from({ length: 5 }).map((_, index) => (
-                    <Star key={`${activeTestimonial.name}-${index}`} size={18} fill="currentColor" />
-                  ))}
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="font-semibold text-[#111827]">{review.name}</p>
+                  <p className="mt-1 text-xs text-[#6b7280]">{review.date} on Google</p>
                 </div>
-
-                <blockquote className="mt-6 text-2xl leading-10 text-[#111827] sm:text-3xl">
-                  “{activeTestimonial.quote}”
-                </blockquote>
-
-                <div className="mt-6">
-                  <p className="text-lg font-semibold text-[#111827]">{activeTestimonial.name}</p>
-                  <p className="text-sm text-[#6b7280]">{activeTestimonial.country}</p>
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f2e7d0] text-sm font-bold text-[#b27d1f]">
+                  {review.name.charAt(0)}
                 </div>
               </div>
-            </motion.div>
-          </AnimatePresence>
 
-          <div className="mt-8 flex justify-center gap-2">
-            {testimonials.map((testimonial, index) => (
-              <button
-                key={testimonial.name}
-                type="button"
-                onClick={() => setActiveIndex(index)}
-                className={`h-2.5 rounded-full transition-all ${
-                  index === activeIndex ? 'w-8 bg-[#d9a84e]' : 'w-2.5 bg-[#d8cdb3] hover:bg-[#c5902f]'
-                }`}
-                aria-label={`Show testimonial ${index + 1}`}
-              />
-            ))}
-          </div>
+              <ReviewStars />
+
+              <blockquote className="mt-4 flex-1 text-sm leading-7 text-[#4b5563]">“{review.quote}”</blockquote>
+            </motion.article>
+          ))}
+        </div>
+
+        <div className="mt-10 flex justify-center">
+          <a
+            href={googleReviewsUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border border-[#d9a84e] px-5 py-2.5 text-sm font-semibold text-[#b27d1f] transition-colors hover:bg-[#d9a84e]/10 focus:outline-none focus:ring-2 focus:ring-[#d9a84e] focus:ring-offset-2"
+          >
+            See all Google reviews
+            <ExternalLink size={16} aria-hidden="true" />
+          </a>
         </div>
       </Container>
     </section>

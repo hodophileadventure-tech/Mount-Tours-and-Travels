@@ -36,7 +36,7 @@ function MainLayout() {
       <header className={`fixed inset-x-0 top-0 z-50 border-b border-[#e5d7b8] bg-[#f8f5ef]/95 shadow-[0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur transition-all duration-500 ${scrolled ? 'py-2' : 'py-0'}`}>
         <Container className="flex items-center justify-between py-4">
           <NavLink to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Mount Travel & Tours logo" className="h-14 w-14 object-contain" />
+            <img src={logo} alt="Mount Travel & Tours logo" className="h-16 w-16 object-contain" />
             <div>
               <p className="text-lg font-semibold tracking-wide text-[#111827]">
                 Mount Travel & Tours

@@ -9,7 +9,7 @@ const destinations = [
     title: 'Hunza',
     description: 'Discover emerald valleys, apricot orchards, and luxury stays with sweeping views over the Karakoram.',
     accent: 'Golden valleys',
-    image: '/images/hunza.avif',
+    image: '/images/hunza-shaukat.jpeg',
   },
   {
     title: 'Gilgit',
@@ -21,7 +21,7 @@ const destinations = [
     title: 'Naltar',
     description: 'Stay in a secluded alpine valley of glacial lakes, cedar forests, and quiet mountain luxury.',
     accent: 'Emerald lakes',
-    image: '/images/naltar.jpg',
+    image: '/images/naltar-custom.jpeg',
   },
   {
     title: 'Nagar',
@@ -33,7 +33,7 @@ const destinations = [
     title: 'Fairy Meadows',
     description: 'Retreat to alpine meadows beneath Nanga Parbat and enjoy intimate lodge experiences in pure mountain air.',
     accent: 'Skyline retreats',
-    image: '/images/fairy-meadows.jpg',
+    image: '/images/fairy-meadows-custom.jpeg',
   },
   {
     title: 'Astore',
@@ -51,25 +51,25 @@ const destinations = [
     title: 'Kaghan',
     description: 'Wander through flower-filled valleys, thermal springs, and select mountain lodges designed for relaxation.',
     accent: 'Meadow beauty',
-    image: '/images/kaghan.jpg',
+    image: '/images/kaghan-custom.jpeg',
   },
   {
     title: 'Swat',
     description: 'Travel through lush river valleys, cultural heritage sites, and curated lodge stays in a peaceful setting.',
     accent: 'Verdant valleys',
-    image: '/images/swat.jpg',
+    image: '/images/swat-custom.jpeg',
   },
   {
     title: 'Kashmir',
     description: 'Savor houseboat stays, mountain air, and luxurious valley retreats in the heart of Kashmir.',
     accent: 'Celestial calm',
-    image: '/images/kashmir.jpg',
+    image: '/images/kashmir-custom.jpeg',
   },
   {
     title: 'Muree',
     description: 'Enjoy refined hill station escapes, pine-scented walks, and elevated hospitality just outside Islamabad.',
     accent: 'Pine hill luxury',
-    image: '/images/muree.avif',
+    image: '/images/murree-custom.jpeg',
   },
 ]
 
