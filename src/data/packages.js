@@ -62,8 +62,8 @@ const packages = [
   },
   {
     category: 'By Air',
-    title: '4 Days Hunza Valley & Naltar Valley Tour',
-    duration: '4 Days / 3 Nights',
+    title: '5 Days Hunza Valley & Naltar Valley Tour',
+    duration: '5 Days / 4 Nights',
     price: 'From PKR 135,000',
     rating: '4.9',
     hotel: 'Deluxe Hotel Accommodation',

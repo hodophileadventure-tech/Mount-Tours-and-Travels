@@ -25,6 +25,7 @@ function TourPackages() {
               <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#d9a84e]">Category 01</p>
               <h2 className="mt-2 text-3xl font-semibold text-[#111827]">By Air</h2>
               <p className="mt-3 max-w-2xl text-lg text-[#6b7280]">Fast, scenic, and comfortable mountain escapes with premium air travel connections.</p>
+              <p className="mt-2 max-w-2xl text-sm font-medium text-[#b45309]">Note: Flight tickets and dinner are not included in the package price.</p>
             </div>
             <div className="grid gap-8 lg:grid-cols-3">
               {airPackages.map((pkg) => (
@@ -38,6 +39,7 @@ function TourPackages() {
               <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#d9a84e]">Category 02</p>
               <h2 className="mt-2 text-3xl font-semibold text-[#111827]">By Road</h2>
               <p className="mt-3 max-w-2xl text-lg text-[#6b7280]">Comfortable road journeys with private transport, thoughtful pacing, and flexible mountain routes.</p>
+              <p className="mt-2 max-w-2xl text-sm font-medium text-[#b45309]">Note: Dinner is not included in the package price.</p>
             </div>
             <div className="grid gap-8 lg:grid-cols-3">
               {roadPackages.map((pkg) => (
