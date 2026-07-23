@@ -15,7 +15,7 @@ const destinations = [
     title: 'Gilgit',
     description: 'A gateway to legendary peaks, vibrant bazaars, and timeless culture nestled along the Gilgit River.',
     accent: 'Mountain crossroads',
-    image: '/images/gilgit.jpg',
+    image: '/images/gilgit-custom.jpeg',
   },
   {
     title: 'Naltar',
