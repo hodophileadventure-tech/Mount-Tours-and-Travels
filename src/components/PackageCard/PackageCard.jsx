@@ -1,7 +1,11 @@
+import { useCallback, useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, BedDouble, Car, Coffee, Star } from 'lucide-react'
+import PackageItineraryModal from '../PackageItineraryModal/PackageItineraryModal'
 
-function PackageCard({ title, duration, price, image, rating, hotel, transport, meals, badge }) {
+function PackageCard({ title, duration, price, image, rating, hotel, transport, meals, badge, itinerary }) {
+  const [isItineraryOpen, setIsItineraryOpen] = useState(false)
+  const closeItinerary = useCallback(() => setIsItineraryOpen(false), [])
   const details = [
     hotel && { label: hotel, icon: <BedDouble size={14} className="text-[#d9a84e]" /> },
     transport && { label: transport, icon: <Car size={14} className="text-[#d9a84e]" /> },
@@ -67,11 +71,23 @@ function PackageCard({ title, duration, price, image, rating, hotel, transport, 
             <p className="text-sm text-[#6b7280]">{hasStartingPrice ? 'Starting from' : 'Package pricing'}</p>
             <p className="text-xl font-semibold text-[#111827] sm:text-2xl">{displayPrice}</p>
           </div>
-          <button className="inline-flex items-center gap-2 rounded-full bg-[#111827] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#d9a84e] hover:text-[#111827]">
-            Book Now <ArrowRight size={16} />
+          <button
+            type="button"
+            onClick={itinerary ? () => setIsItineraryOpen(true) : undefined}
+            className="inline-flex items-center gap-2 rounded-full bg-[#111827] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#d9a84e] hover:text-[#111827]"
+          >
+            {itinerary ? 'View itinerary' : 'Book Now'} <ArrowRight size={16} />
           </button>
         </div>
       </div>
+      {isItineraryOpen && itinerary ? (
+        <PackageItineraryModal
+          title={title}
+          duration={duration}
+          itinerary={itinerary}
+          onClose={closeItinerary}
+        />
+      ) : null}
     </motion.article>
   )
 }
