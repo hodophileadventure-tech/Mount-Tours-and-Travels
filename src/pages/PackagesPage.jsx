@@ -29,7 +29,7 @@ function PackagesPage() {
         </div>
       </Container>
 
-      <TourPackages />
+      <TourPackages showPackageTypeSelector />
     </section>
   )
 }
