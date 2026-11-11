@@ -36,9 +36,6 @@ function Hero() {
         <source src="/videos/hero-mountains.mp4" type="video/mp4" />
       </motion.video>
 
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(217,168,78,0.22),_transparent_30%),linear-gradient(90deg,rgba(5,5,5,0.78)_0%,rgba(5,5,5,0.55)_60%,rgba(5,5,5,0.78)_100%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,5,5,0.35)_0%,rgba(5,5,5,0.55)_100%)]" />
-
       <div className="relative z-10 flex min-h-screen flex-col justify-center">
         <Container className="pb-20 pt-28 sm:pt-32 lg:pt-36">
           <motion.div
