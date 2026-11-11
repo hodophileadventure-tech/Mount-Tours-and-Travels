@@ -29,19 +29,25 @@ function TourPackages({ showPackageTypeSelector = false }) {
               <h2 className="mt-2 text-2xl font-semibold text-[#111827]">Choose a package style</h2>
               <p className="mt-2 max-w-xl text-[#6b7280]">Browse a private escape or explore our group tour collection.</p>
             </div>
-            <div className="w-full sm:max-w-xs">
-              <label htmlFor="package-type" className="mb-2 block text-sm font-medium text-[#374151]">
-                Package type
-              </label>
-              <select
-                id="package-type"
-                value={packageType}
-                onChange={(event) => setPackageType(event.target.value)}
-                className="w-full rounded-xl border border-[#e5d7b8] bg-[#fcfaf6] px-4 py-3 text-base font-semibold text-[#111827] outline-none transition focus:border-[#d9a84e] focus:ring-2 focus:ring-[#d9a84e]/20"
-              >
-                <option value="Private">Private packages</option>
-                <option value="Group">Group packages</option>
-              </select>
+            <div className="flex w-full gap-3 sm:w-auto" role="group" aria-label="Package type">
+              {[
+                { value: 'Private', label: 'Private packages' },
+                { value: 'Group', label: 'Group packages' },
+              ].map(({ value, label }) => (
+                <button
+                  key={value}
+                  type="button"
+                  aria-pressed={packageType === value}
+                  onClick={() => setPackageType(value)}
+                  className={`flex-1 rounded-full border px-5 py-3 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-[#d9a84e] focus:ring-offset-2 sm:flex-none ${
+                    packageType === value
+                      ? 'border-[#d9a84e] bg-[#d9a84e] text-[#111827]'
+                      : 'border-[#e5d7b8] bg-white text-[#374151] hover:border-[#d9a84e] hover:bg-[#fcfaf6]'
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
             </div>
           </div>
         ) : null}
