@@ -33,7 +33,7 @@ function Hero() {
         playsInline
         poster="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80"
       >
-        <source src="https://videos.pexels.com/video-files/856999/856999-hd_1280_720_25fps.mp4" type="video/mp4" />
+        <source src="/videos/hero-mountains.mp4" type="video/mp4" />
       </motion.video>
 
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(217,168,78,0.22),_transparent_30%),linear-gradient(90deg,rgba(5,5,5,0.78)_0%,rgba(5,5,5,0.55)_60%,rgba(5,5,5,0.78)_100%)]" />
