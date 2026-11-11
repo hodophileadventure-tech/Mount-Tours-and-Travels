@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight, BedDouble, Car, Coffee, Star } from 'lucide-react'
 import PackageItineraryModal from '../PackageItineraryModal/PackageItineraryModal'
 
-function PackageCard({ title, duration, price, image, rating, hotel, transport, meals, badge, itinerary }) {
+function PackageCard({ title, duration, price, image, rating, hotel, transport, meals, badge, itinerary, groupPricing }) {
   const [isItineraryOpen, setIsItineraryOpen] = useState(false)
   const closeItinerary = useCallback(() => setIsItineraryOpen(false), [])
   const details = [
@@ -68,8 +68,21 @@ function PackageCard({ title, duration, price, image, rating, hotel, transport, 
 
         <div className="mt-auto flex flex-wrap items-end justify-between gap-3 pt-6">
           <div>
-            <p className="text-sm text-[#6b7280]">{hasStartingPrice ? 'Starting from' : 'Package pricing'}</p>
-            <p className="text-xl font-semibold text-[#111827] sm:text-2xl">{displayPrice}</p>
+            {groupPricing ? (
+              <div className="space-y-1">
+                <p className="text-sm text-[#6b7280]">
+                  Per person <span className="ml-1 font-semibold text-[#111827]">PKR {groupPricing.perPerson.toLocaleString('en-US')}</span>
+                </p>
+                <p className="text-sm text-[#6b7280]">
+                  Per couple <span className="ml-1 font-semibold text-[#111827]">PKR {groupPricing.perCouple.toLocaleString('en-US')}</span>
+                </p>
+              </div>
+            ) : (
+              <>
+                <p className="text-sm text-[#6b7280]">{hasStartingPrice ? 'Starting from' : 'Package pricing'}</p>
+                <p className="text-xl font-semibold text-[#111827] sm:text-2xl">{displayPrice}</p>
+              </>
+            )}
           </div>
           <button
             type="button"

@@ -198,6 +198,7 @@ const packages = [
     title: '3 Days Swat, Kalam & Malam Jabba',
     duration: '3 Days / 2 Nights',
     price: 'Contact for pricing',
+    groupPricing: { perPerson: 18000, perCouple: 34000 },
     image: '/images/swat-road.jpeg',
     badge: 'Group Tour',
     itinerary: {
@@ -247,6 +248,7 @@ const packages = [
     title: '3 Days Neelum Valley, Kel & Arangkel',
     duration: '3 Days / 2 Nights',
     price: 'Contact for pricing',
+    groupPricing: { perPerson: 20000, perCouple: 38000 },
     image: '/images/kashmir-road.jpeg',
     badge: 'Group Tour',
     itinerary: {
@@ -304,6 +306,7 @@ const packages = [
     title: '4 Days Swat',
     duration: '4 Days / 3 Nights',
     price: 'Contact for pricing',
+    groupPricing: { perPerson: 22000, perCouple: 42000 },
     image: '/images/swat-custom.jpeg',
     badge: 'Group Tour',
     itinerary: {
@@ -393,6 +396,7 @@ const packages = [
     title: '4 Days Neelum Valley, Sharda, Kel, Arangkel & Khanpur Dam',
     duration: '4 Days / 3 Nights',
     price: 'Contact for pricing',
+    groupPricing: { perPerson: 25000, perCouple: 48000 },
     image: '/images/kashmir-custom.jpeg',
     badge: 'Group Tour',
     itinerary: {
@@ -464,6 +468,7 @@ const packages = [
     title: '5 Days Hunza Valley Tour',
     duration: '5 Days / 4 Nights',
     price: 'Contact for pricing',
+    groupPricing: { perPerson: 32000, perCouple: 60000 },
     image: '/images/hunza-road.jpeg',
     badge: 'Group Tour',
     itinerary: {
@@ -547,6 +552,7 @@ const packages = [
     title: '5 Days Fairy Meadows',
     duration: '5 Days / 4 Nights',
     price: 'Contact for pricing',
+    groupPricing: { perPerson: 30000, perCouple: 56000 },
     image: '/images/fairy-meadows-custom.jpeg',
     badge: 'Group Tour',
     itinerary: {
@@ -624,115 +630,10 @@ const packages = [
   },
   {
     category: 'Group',
-    title: '7 Days Swat, Kalam, Malam Jabba, Balakot & Kashmir',
-    duration: '7 Days / 6 Nights',
-    price: 'Contact for pricing',
-    image: '/images/swat-custom.jpeg',
-    badge: 'Group Tour',
-    itinerary: {
-      places: [
-        'Kalam',
-        'Ushu Forest',
-        'Palogha Valley',
-        'Matiltan Waterfall',
-        'Mahudand Lake',
-        'Malam Jabba',
-        'Fizaghat',
-        'Balakot',
-        'Keran / Sharda',
-        'Kel',
-        'Arangkel',
-        'Kundal Shahi Waterfall',
-        'Kutton',
-        'Khanpur Dam',
-      ],
-      days: [
-        {
-          title: 'Arrive in Kalam',
-          activities: [
-            'Travel to Kalam and have breakfast on the way',
-            'Check in to the hotel',
-            'Visit Kalam Bazaar',
-            'Dinner and overnight stay in Kalam',
-          ],
-        },
-        {
-          title: 'Ushu Forest and Mahudand Lake',
-          activities: [
-            'Travel to Ushu Forest by 4x4 jeep',
-            'Visit Palogha Valley and Matiltan',
-            'Visit Mahudand Lake, if accessible',
-            'Return to Kalam and stay overnight',
-          ],
-        },
-        {
-          title: 'Kalam to Malam Jabba',
-          activities: [
-            'Depart for Swat and have breakfast on the way',
-            'Travel to Malam Jabba and enjoy leisure time',
-            'Optional zipline, chairlift, and other activities (not included)',
-            'Continue to Fizaghat, check in to the hotel, and have dinner',
-            'Overnight stay in Fizaghat',
-          ],
-        },
-        {
-          title: 'Malam Jabba to Balakot',
-          activities: [
-            'Travel to Balakot (approximately 5–6 hours)',
-            'Make a short stop on the way',
-            'Check in to the hotel and enjoy free time',
-            'Overnight stay in Balakot',
-          ],
-        },
-        {
-          title: 'Balakot to Keran / Sharda',
-          activities: [
-            'Travel to Keran (approximately 7–8 hours)',
-            'Sightseeing stops at Kashmir Waterfall and Dhani Waterfall',
-            'Visit Neelum Jhelum Hydropower and Chilana LOC',
-            'Arrive late and check in to the hotel',
-            'Overnight stay in Keran / Sharda',
-          ],
-        },
-        {
-          title: 'Kel and Arangkel',
-          activities: [
-            'Travel to Arangkel by 4x4 / Grand Cabin',
-            'Visit Kel and take a doli ride across the river to Arangkel, if accessible',
-            'Trek approximately 40–50 minutes on a dusty, rugged trail',
-            'Enjoy free time in Arangkel',
-            'Return to Keran and stay overnight',
-          ],
-        },
-        {
-          title: 'Return to Islamabad',
-          activities: [
-            'Depart for Islamabad',
-            'Stop at Kundal Shahi Waterfall / Kutton',
-            'Visit Khanpur Dam for water-sport activities, if time allows',
-            'Reach Islamabad and drop off participants',
-          ],
-        },
-      ],
-      included: [
-        'Accommodation',
-        'Grand Cabin transport',
-        'Breakfast',
-        'Tolls and taxes',
-        'Tour guide',
-        'Bonfire',
-      ],
-      excluded: [
-        'Malam Jabba chairlift, zipline, and other activities',
-        'Khanpur Dam water-sport activities',
-      ],
-    },
-  },
-  {
-    category: 'Group',
     title: '7 Days Fairy Meadows & Hunza',
     duration: '7 Days / 6 Nights',
     price: 'Contact for pricing',
+    groupPricing: { perPerson: 48000, perCouple: 90000 },
     image: '/images/hunza-shaukat.jpeg',
     badge: 'Group Tour',
     itinerary: {
@@ -839,6 +740,7 @@ const packages = [
     title: '5 Days Kashmir & Shogran',
     duration: '5 Days / 4 Nights',
     price: 'Contact for pricing',
+    groupPricing: { perPerson: 28000, perCouple: 52000 },
     image: '/images/shogran-road.jpeg',
     badge: 'Group Tour',
     itinerary: {
@@ -925,6 +827,7 @@ const packages = [
     title: '3 Days Naran & Kaghan — Lulusar Lake & Babusar Top',
     duration: '3 Days / 2 Nights',
     price: 'Contact for pricing',
+    groupPricing: { perPerson: 20000, perCouple: 38000 },
     image: '/images/naran-road.jpeg',
     badge: 'Group Tour',
     itinerary: {
@@ -986,6 +889,7 @@ const packages = [
     title: '4 Days Naran & Shogran — Kaghan & Babusar Top',
     duration: '4 Days / 3 Nights',
     price: 'Contact for pricing',
+    groupPricing: { perPerson: 26000, perCouple: 49000 },
     image: '/images/naran.jpg',
     badge: 'Group Tour',
     itinerary: {
@@ -1059,6 +963,7 @@ const packages = [
     title: '4 Days Kumrat Valley Tour',
     duration: '4 Days / 3 Nights',
     price: 'Contact for pricing',
+    groupPricing: { perPerson: 22000, perCouple: 42000 },
     badge: 'Group Tour',
     itinerary: {
       places: [
@@ -1131,6 +1036,7 @@ const packages = [
     title: '6 Days Astore, Minimarg & Naran',
     duration: '6 Days / 5 Nights',
     price: 'Contact for pricing',
+    groupPricing: { perPerson: 38000, perCouple: 72000 },
     image: '/images/astore-road.jpeg',
     badge: 'Group Tour',
     itinerary: {
@@ -1221,6 +1127,7 @@ const packages = [
     title: '2 Days Ormara',
     duration: '2 Days / 1 Night',
     price: 'Contact for pricing',
+    groupPricing: { perPerson: 15000, perCouple: 28000 },
     badge: 'Group Tour',
     itinerary: {
       places: ['Ormara Beach', 'Princess of Hope', 'Kund Malir View Point', 'Winder'],
@@ -1256,20 +1163,124 @@ const packages = [
     title: '3 Days Quetta & Ziarat',
     duration: '3 Days / 2 Nights',
     price: 'Contact for pricing',
+    groupPricing: { perPerson: 19000, perCouple: 36000 },
     badge: 'Group Tour',
+    itinerary: {
+      places: [
+        'Hanna Lake',
+        'Quetta city and local markets',
+        'Quaid-e-Azam Residency',
+        'Ziarat Juniper Forest',
+        'Ziarat town and viewpoints',
+      ],
+      days: [
+        {
+          title: 'Karachi to Quetta and city exploration',
+          activities: [
+            'Depart Karachi early in the morning or the previous night, depending on the selected transport schedule',
+            'Travel toward Quetta via the interior Sindh and Balochistan route',
+            'Take scheduled refreshment and lunch breaks during the journey',
+            'Arrive in Quetta, transfer to the hotel, and check in',
+            'Visit Hanna Lake for sightseeing and photography',
+            'Explore Quetta city and local markets, time permitting',
+            'Have dinner at a local restaurant and stay overnight in Quetta',
+          ],
+        },
+        {
+          title: 'Quetta to Ziarat and explore Ziarat Valley',
+          activities: [
+            'Have breakfast at the hotel, check out, and depart for Ziarat',
+            'Enjoy the scenic drive through the mountains of Balochistan',
+            'Visit the historic Quaid-e-Azam Residency and explore its surroundings',
+            'Visit the Ziarat Juniper Forest for sightseeing and photography',
+            'Have lunch at a local restaurant and explore Ziarat town and nearby viewpoints',
+            'Check in to the hotel and enjoy the evening at leisure',
+            'Have dinner and stay overnight in Ziarat',
+          ],
+        },
+        {
+          title: 'Ziarat to Quetta and return to Karachi',
+          activities: [
+            'Have breakfast and enjoy final sightseeing and photography in Ziarat',
+            'Check out of the hotel and depart for Quetta',
+            'Take a refreshment break on arrival in Quetta',
+            'Begin the return journey to Karachi with lunch and refreshment stops along the way',
+            'Arrive in Karachi; tour concludes',
+          ],
+        },
+      ],
+      accommodation: [
+        { night: '1st night', location: 'Quetta' },
+        { night: '2nd night', location: 'Ziarat' },
+      ],
+    },
   },
   {
     category: 'Group',
     title: '3 Days Gorakh Hill',
     duration: '3 Days / 2 Nights',
     price: 'Contact for pricing',
+    groupPricing: { perPerson: 20000, perCouple: 38000 },
     badge: 'Group Tour',
+    itinerary: {
+      places: [
+        'Jamshoro',
+        'Sehwan Sharif',
+        'Johi',
+        'Wahi Pandhi',
+        'Gorakh Hill Station',
+        'Kirthar Mountain Range',
+      ],
+      days: [
+        {
+          title: 'Karachi to Gorakh Hill Station',
+          activities: [
+            'Depart early from Karachi and travel toward Jamshoro via the M-9 Motorway',
+            'Continue toward Sehwan Sharif via the Indus Highway and take a refreshment break',
+            'Travel onward to Johi and Wahi Pandhi, the starting point of the Gorakh Hill ascent',
+            'Transfer to local 4x4 jeeps for the mountain journey through the Kirthar Range',
+            'Arrive at Gorakh Hill Station and check in to the accommodation or campsite',
+            'Explore nearby viewpoints and enjoy the mountain sunset',
+            'Have dinner and spend the evening stargazing',
+            'Overnight stay at Gorakh Hill Station',
+          ],
+        },
+        {
+          title: 'Explore Gorakh Hill',
+          activities: [
+            'Wake early to enjoy the mountain sunrise, followed by tea and breakfast',
+            'Explore the surrounding viewpoints and photography spots',
+            'Enjoy panoramic views of the Kirthar Mountain Range',
+            'Have lunch at the campsite or designated dining area',
+            'Enjoy optional hiking and nature walks, subject to local guidance and conditions',
+            'Spend free time relaxing and taking photographs',
+            'Enjoy the sunset, dinner, and a bonfire where permitted',
+            'Overnight stay at Gorakh Hill Station',
+          ],
+        },
+        {
+          title: 'Gorakh Hill to Karachi',
+          activities: [
+            'Have breakfast and enjoy final sightseeing and photography',
+            'Check out and board local 4x4 jeeps for the descent to Wahi Pandhi',
+            'Transfer to the main vehicle and travel toward Karachi via Johi and Sehwan',
+            'Take refreshment and lunch breaks along the way',
+            'Continue via Jamshoro and arrive in Karachi; tour concludes',
+          ],
+        },
+      ],
+      accommodation: [
+        { night: '1st night', location: 'Gorakh Hill Station' },
+        { night: '2nd night', location: 'Gorakh Hill Station' },
+      ],
+    },
   },
   {
     category: 'Group',
     title: '5 Days Swat & Shogran',
     duration: '5 Days / 4 Nights',
     price: 'Contact for pricing',
+    groupPricing: { perPerson: 30000, perCouple: 56000 },
     image: '/images/swat-road.jpeg',
     badge: 'Group Tour',
     itinerary: {
@@ -1354,6 +1365,7 @@ const packages = [
     title: '8 Days Hunza & Skardu (Islamabad to Islamabad)',
     duration: '8 Days / 7 Nights',
     price: 'Contact for pricing',
+    groupPricing: { perPerson: 48000, perCouple: 90000 },
     image: '/images/hunza-skardu-road.jpeg',
     badge: 'Group Tour',
     itinerary: {
@@ -1460,8 +1472,110 @@ const packages = [
     title: '7 Days Swat, Shogran & Kashmir',
     duration: '7 Days / 6 Nights',
     price: 'Contact for pricing',
+    groupPricing: { perPerson: 45000, perCouple: 85000 },
     image: '/images/swat-custom.jpeg',
     badge: 'Group Tour',
+    itinerary: {
+      places: [
+        'Malakand Pass',
+        'Mingora',
+        'Fizagat Park',
+        'Malam Jabba',
+        'Kiwai Waterfall',
+        'Shogran',
+        'Siri Paye Meadows',
+        'Muzaffarabad',
+        'Keran',
+        'Neelum Valley',
+        'Sharda (time and road conditions permitting)',
+      ],
+      days: [
+        {
+          title: 'Islamabad to Swat',
+          activities: [
+            'Depart early from Islamabad and travel toward Swat Valley via Malakand Pass',
+            'Stop at Malakand Pass for sightseeing and photography',
+            'Take a refreshments and lunch break en route',
+            'Arrive in Mingora and check in to the hotel',
+            'Visit Fizagat Park and explore the local market, time permitting',
+            'Dinner and overnight stay in Mingora',
+          ],
+        },
+        {
+          title: 'Explore Swat Valley and Malam Jabba',
+          activities: [
+            'Have breakfast at the hotel and depart for Malam Jabba',
+            'Enjoy the mountain scenery, sightseeing, and surrounding viewpoints',
+            'Optional chairlift and other recreational activities, subject to operation',
+            'Have lunch at a local restaurant',
+            'Return to Mingora and explore the local bazaar, time permitting',
+            'Dinner and overnight stay in Mingora',
+          ],
+        },
+        {
+          title: 'Swat to Shogran',
+          activities: [
+            'Have breakfast and check out of the hotel',
+            'Travel toward Shogran via Balakot and Kaghan',
+            'Stop at Kiwai Waterfall for sightseeing and photography',
+            'Take a lunch break en route',
+            'Transfer to a local 4x4 jeep for the uphill journey where required',
+            'Check in to the hotel and enjoy leisure time in Shogran',
+            'Dinner and overnight stay in Shogran',
+          ],
+        },
+        {
+          title: 'Explore Siri Paye Meadows',
+          activities: [
+            'Have breakfast and travel to Siri Paye Meadows by 4x4 jeep',
+            'Explore the meadows and viewpoint, with time for photography and refreshments',
+            'Return to Shogran for lunch and leisure time',
+            'Enjoy an evening walk around the surroundings',
+            'Dinner and overnight stay in Shogran',
+          ],
+        },
+        {
+          title: 'Shogran to Neelum Valley',
+          activities: [
+            'Have breakfast and check out of the hotel',
+            'Travel toward Azad Kashmir via Balakot and Garhi Habibullah, subject to road conditions',
+            'Take a lunch break en route and enjoy scenic stops',
+            'Visit Muzaffarabad, time permitting',
+            'Continue to Keran in Neelum Valley and check in to the hotel',
+            'Enjoy the Neelum River views',
+            'Dinner and overnight stay in Keran',
+          ],
+        },
+        {
+          title: 'Explore Neelum Valley',
+          activities: [
+            'Have breakfast at the hotel and explore Keran and its riverside surroundings',
+            'Visit scenic viewpoints and take photography stops along the Neelum River',
+            'Explore nearby attractions such as Sharda, depending on road conditions and available time',
+            'Have lunch at a local restaurant',
+            'Return to the hotel and enjoy the evening at leisure',
+            'Dinner and overnight stay in Neelum Valley',
+          ],
+        },
+        {
+          title: 'Neelum Valley to Islamabad',
+          activities: [
+            'Have breakfast and check out of the hotel',
+            'Begin the return journey via Muzaffarabad and the Hazara route, subject to road conditions',
+            'Take refreshments and lunch breaks during the journey',
+            'Arrive in Islamabad in the evening; tour concludes',
+          ],
+        },
+      ],
+      accommodation: [
+        { night: '1st night', location: 'Mingora, Swat' },
+        { night: '2nd night', location: 'Mingora, Swat' },
+        { night: '3rd night', location: 'Shogran' },
+        { night: '4th night', location: 'Shogran' },
+        { night: '5th night', location: 'Keran, Neelum Valley' },
+        { night: '6th night', location: 'Neelum Valley' },
+      ],
+    },
   },
 ]
 
