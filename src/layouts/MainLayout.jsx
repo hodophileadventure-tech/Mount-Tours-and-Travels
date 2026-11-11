@@ -4,6 +4,7 @@ import { Compass, Menu, Sparkles, X } from 'lucide-react'
 import Container from '../components/Container/Container'
 import Footer from '../components/Footer/Footer'
 import logo from '../assets/logo.png'
+import packages from '../data/packages'
 
 const navLinks = [
   { to: '/', label: 'Home' },
@@ -18,6 +19,21 @@ function MainLayout() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [tripFormOpen, setTripFormOpen] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const groupPackages = packages.filter((pkg) => pkg.category === 'Group')
+  const [tripDetails, setTripDetails] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    destination: '',
+    travelers: '1',
+    preferredDates: '',
+    packageTitle: groupPackages[0]?.title ?? '',
+    notes: '',
+  })
+  const selectedGroupPackage = groupPackages.find((pkg) => pkg.title === tripDetails.packageTitle)
+  const travelerCount = Number(tripDetails.travelers)
+  const pricePerPerson = selectedGroupPackage?.groupPricing?.perPerson ?? 0
+  const estimatedTotal = pricePerPerson * travelerCount
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -29,6 +45,11 @@ function MainLayout() {
   const handleTripSubmit = (event) => {
     event.preventDefault()
     setSubmitted(true)
+  }
+
+  const handleTripDetailsChange = (event) => {
+    const { name, value } = event.target
+    setTripDetails((current) => ({ ...current, [name]: value }))
   }
 
   return (
@@ -132,39 +153,87 @@ function MainLayout() {
             </div>
 
             {submitted ? (
-              <div className="mt-6 rounded-[1.25rem] border border-[#d9a84e]/30 bg-[#fff8e8] p-5 text-sm text-[#6b7280] sm:p-6">
-                <p className="font-semibold text-[#111827]">Thank you for your request.</p>
-                <p className="mt-2">Our travel team will reach out to you shortly with a personalized itinerary.</p>
+              <div role="status" aria-live="polite" className="mt-6 rounded-[1.25rem] border border-[#d9a84e]/30 bg-[#fff8e8] p-5 text-sm text-[#6b7280] sm:p-6">
+                <p className="font-semibold text-[#111827]">Your tentative quotation is ready, {tripDetails.name}.</p>
+                <p className="mt-2">Our travel team will confirm package availability and final pricing with you.</p>
+                <dl className="mt-5 space-y-3 border-t border-[#e5d7b8] pt-4">
+                  <div className="flex flex-wrap justify-between gap-2">
+                    <dt>Group package</dt>
+                    <dd className="font-medium text-[#111827]">{selectedGroupPackage?.title}</dd>
+                  </div>
+                  <div className="flex flex-wrap justify-between gap-2">
+                    <dt>Duration</dt>
+                    <dd className="font-medium text-[#111827]">{selectedGroupPackage?.duration}</dd>
+                  </div>
+                  <div className="flex flex-wrap justify-between gap-2">
+                    <dt>Travelers</dt>
+                    <dd className="font-medium text-[#111827]">{travelerCount}</dd>
+                  </div>
+                  <div className="flex flex-wrap justify-between gap-2">
+                    <dt>Preferred dates</dt>
+                    <dd className="font-medium text-[#111827]">{tripDetails.preferredDates}</dd>
+                  </div>
+                  <div className="flex flex-wrap justify-between gap-2">
+                    <dt>Price per person</dt>
+                    <dd className="font-medium text-[#111827]">PKR {pricePerPerson.toLocaleString('en-US')}</dd>
+                  </div>
+                  <div className="flex flex-wrap justify-between gap-2 border-t border-[#e5d7b8] pt-3 text-base">
+                    <dt className="font-semibold text-[#111827]">Estimated total</dt>
+                    <dd className="font-bold text-[#111827]">PKR {estimatedTotal.toLocaleString('en-US')}</dd>
+                  </div>
+                </dl>
+                <p className="mt-4 text-xs">This is a tentative estimate, not a confirmed booking.</p>
               </div>
             ) : (
               <form className="mt-6 grid gap-4 md:grid-cols-2" onSubmit={handleTripSubmit}>
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#374151]">Full name</label>
-                  <input required className="w-full rounded-2xl border border-[#e5d7b8] bg-white px-4 py-3 text-sm outline-none focus:border-[#d9a84e]" placeholder="Enter your name" />
+                  <input required name="name" value={tripDetails.name} onChange={handleTripDetailsChange} autoComplete="name" className="w-full rounded-2xl border border-[#e5d7b8] bg-white px-4 py-3 text-sm outline-none focus:border-[#d9a84e]" placeholder="Enter your name" />
                 </div>
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#374151]">Email address</label>
-                  <input type="email" required className="w-full rounded-2xl border border-[#e5d7b8] bg-white px-4 py-3 text-sm outline-none focus:border-[#d9a84e]" placeholder="your@email.com" />
+                  <input type="email" required name="email" value={tripDetails.email} onChange={handleTripDetailsChange} autoComplete="email" className="w-full rounded-2xl border border-[#e5d7b8] bg-white px-4 py-3 text-sm outline-none focus:border-[#d9a84e]" placeholder="your@email.com" />
                 </div>
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#374151]">Phone number</label>
-                  <input required className="w-full rounded-2xl border border-[#e5d7b8] bg-white px-4 py-3 text-sm outline-none focus:border-[#d9a84e]" placeholder="03XX-XXXXXXX" />
+                  <input required type="tel" name="phone" value={tripDetails.phone} onChange={handleTripDetailsChange} autoComplete="tel" className="w-full rounded-2xl border border-[#e5d7b8] bg-white px-4 py-3 text-sm outline-none focus:border-[#d9a84e]" placeholder="03XX-XXXXXXX" />
                 </div>
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#374151]">Destination</label>
-                  <input required className="w-full rounded-2xl border border-[#e5d7b8] bg-white px-4 py-3 text-sm outline-none focus:border-[#d9a84e]" placeholder="Skardu, Hunza, etc." />
+                  <input required name="destination" value={tripDetails.destination} onChange={handleTripDetailsChange} className="w-full rounded-2xl border border-[#e5d7b8] bg-white px-4 py-3 text-sm outline-none focus:border-[#d9a84e]" placeholder="Skardu, Hunza, etc." />
                 </div>
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#374151]">Travelers</label>
-                  <input required className="w-full rounded-2xl border border-[#e5d7b8] bg-white px-4 py-3 text-sm outline-none focus:border-[#d9a84e]" placeholder="2 adults, 1 child" />
+                  <input required type="number" min="1" step="1" name="travelers" value={tripDetails.travelers} onChange={handleTripDetailsChange} className="w-full rounded-2xl border border-[#e5d7b8] bg-white px-4 py-3 text-sm outline-none focus:border-[#d9a84e]" />
                 </div>
                 <div>
                   <label className="mb-2 block text-sm font-medium text-[#374151]">Preferred dates</label>
-                  <input type="text" className="w-full rounded-2xl border border-[#e5d7b8] bg-white px-4 py-3 text-sm outline-none focus:border-[#d9a84e]" placeholder="e.g. July 2026" />
+                  <input required type="text" name="preferredDates" value={tripDetails.preferredDates} onChange={handleTripDetailsChange} className="w-full rounded-2xl border border-[#e5d7b8] bg-white px-4 py-3 text-sm outline-none focus:border-[#d9a84e]" placeholder="e.g. July 2026" />
+                </div>
+                <div className="md:col-span-2">
+                  <label className="mb-2 block text-sm font-medium text-[#374151]" htmlFor="trip-package">Choose a group package</label>
+                  <select
+                    id="trip-package"
+                    required
+                    name="packageTitle"
+                    value={tripDetails.packageTitle}
+                    onChange={handleTripDetailsChange}
+                    className="w-full rounded-2xl border border-[#e5d7b8] bg-white px-4 py-3 text-sm outline-none focus:border-[#d9a84e]"
+                  >
+                    {groupPackages.map((pkg) => (
+                      <option key={pkg.title} value={pkg.title}>
+                        {pkg.title} — {pkg.duration} — PKR {(pkg.groupPricing?.perPerson ?? 0).toLocaleString('en-US')} per person
+                      </option>
+                    ))}
+                  </select>
+                  <div aria-live="polite" className="mt-3 flex flex-wrap justify-between gap-2 rounded-2xl bg-[#fff8e8] px-4 py-3 text-sm">
+                    <span className="text-[#6b7280]">PKR {pricePerPerson.toLocaleString('en-US')} per person × {travelerCount} {travelerCount === 1 ? 'traveler' : 'travelers'}</span>
+                    <span className="font-semibold text-[#111827]">Estimated total: PKR {estimatedTotal.toLocaleString('en-US')}</span>
+                  </div>
                 </div>
                 <div className="md:col-span-2">
                   <label className="mb-2 block text-sm font-medium text-[#374151]">Trip notes</label>
-                  <textarea rows="5" className="w-full rounded-2xl border border-[#e5d7b8] bg-white px-4 py-3 text-sm outline-none focus:border-[#d9a84e]" placeholder="Tell us about your travel style, budget, or special requests" />
+                  <textarea rows="5" name="notes" value={tripDetails.notes} onChange={handleTripDetailsChange} className="w-full rounded-2xl border border-[#e5d7b8] bg-white px-4 py-3 text-sm outline-none focus:border-[#d9a84e]" placeholder="Tell us about your travel style, budget, or special requests" />
                 </div>
                 <div className="md:col-span-2 flex flex-col gap-3 pt-2 sm:flex-row sm:items-center sm:justify-between">
                   <p className="text-sm text-[#6b7280]">We’ll contact you within 24 hours.</p>

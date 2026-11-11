@@ -8,7 +8,7 @@ function TourPackages({ showPackageTypeSelector = false }) {
   const airPackages = packages.filter((pkg) => pkg.category === 'By Air')
   const roadPackages = packages.filter((pkg) => pkg.category === 'By Road')
   const groupPackages = packages.filter((pkg) => pkg.category === 'Group')
-  const [packageType, setPackageType] = useState('Private')
+  const [packageType, setPackageType] = useState('Group')
   const [tripDetails, setTripDetails] = useState({
     name: '',
     phone: '',
@@ -94,13 +94,7 @@ function TourPackages({ showPackageTypeSelector = false }) {
               <h2 className="mt-2 text-3xl font-semibold text-[#111827]">Group Packages</h2>
               <p className="mt-3 max-w-2xl text-lg text-[#6b7280]">Discover group journeys across Pakistan’s mountains, valleys, and coast.</p>
             </div>
-            <div className="grid gap-8 lg:grid-cols-3">
-              {groupPackages.map((pkg) => (
-                <PackageCard key={pkg.title} {...pkg} />
-              ))}
-            </div>
-
-            <div id="group-quotation" className="mt-12 grid scroll-mt-24 gap-8 rounded-[1.8rem] border border-[#e5d7b8] bg-white p-6 shadow-[0_18px_60px_rgba(17,24,39,0.06)] lg:grid-cols-[1.1fr_0.9fr] lg:p-10">
+            <div id="group-quotation" className="mb-12 grid scroll-mt-24 gap-8 rounded-[1.8rem] border border-[#e5d7b8] bg-white p-6 shadow-[0_18px_60px_rgba(17,24,39,0.06)] lg:grid-cols-[1.1fr_0.9fr] lg:p-10">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.3em] text-[#d9a84e]">Make your trip</p>
                 <h3 className="mt-2 text-2xl font-semibold text-[#111827] sm:text-3xl">Get a tentative group-tour quotation</h3>
@@ -250,6 +244,12 @@ function TourPackages({ showPackageTypeSelector = false }) {
                   <p className="mt-5 text-xs leading-5 text-white/60">This quotation is an estimate, not a confirmed booking. Final price and availability are subject to confirmation.</p>
                 </div>
               ) : null}
+            </div>
+
+            <div className="grid gap-8 lg:grid-cols-3">
+              {groupPackages.map((pkg) => (
+                <PackageCard key={pkg.title} {...pkg} />
+              ))}
             </div>
           </div>
         ) : (
